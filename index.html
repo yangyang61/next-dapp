@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .content {
+        width: 600px;
+        margin: 0 auto;
+        padding: 100px;
+    }
+
+    button {
+        display: block;
+        width: 100px;
+        border: 1px solid #000;
+    }
+
+    .pdf {
+        width: 600px;
+        height: 600px;
+        margin: 0 auto;
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+    <div class="content">
+        <p>Name</p>
+        <input name="name" id="name" type="text">
+        <br />
+        <br />
+        <p>PassPort</p>
+        <input name="passport" id="passport" type="text">
+        <br />
+        <br />
+        <button id="btn">下一步</button>
+        <script>
+            const name = document.getElementById('name')
+            const passport = document.getElementById('passport')
+            document.getElementById("btn").addEventListener("click", (e) => {
+                console.log('e', e);
+                console.log('name', name.value);
+                console.log('passport', passport.value);
+                const params = { name: name.value, passport: passport.value }
+                window.location.href = './test/index.html?name=' + name.value + '&passport=' + passport.value
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>
